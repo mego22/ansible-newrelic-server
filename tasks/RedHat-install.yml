@@ -1,0 +1,7 @@
+---
+
+- name: New Relic sysmond | Setup yum repo
+  yum: name=https://yum.newrelic.com/pub/newrelic/el5/x86_64/newrelic-repo-5-3.noarch.rpm state=present
+
+- name: New Relic sysmond | Installing sysmond
+  yum: name=newrelic-sysmond state=present

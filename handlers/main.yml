@@ -1,0 +1,3 @@
+---
+- name: New Relic sysmond | restart
+  service: name=sysmond state=restarted

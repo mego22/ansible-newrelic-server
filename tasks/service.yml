@@ -1,0 +1,3 @@
+---
+- name: New Relic Sysmond | Start Sysmond
+  service: name=newrelic-sysmond state=started enabled=yes

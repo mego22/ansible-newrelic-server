@@ -1,4 +1,7 @@
 ---
+- fail: msg="License key is not set."
+  when: newrelic_sysmond_license_key is none
+
 - include: RedHat-install.yml
   when: ansible_os_family == "RedHat"
 

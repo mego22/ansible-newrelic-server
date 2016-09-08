@@ -2,4 +2,4 @@
 - name: wrapper playbook for kitchen testing
   hosts: all
   roles:
-    - ansible-role-newrelic-sysmond
+    - { role: ansible-role-newrelic-sysmond, newrelic_sysmond_license_key: 'UKYNCLPMI54A6C9J1T6BINKAKQ2CMPTVAXU5L64P' }

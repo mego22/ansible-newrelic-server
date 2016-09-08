@@ -5,7 +5,7 @@
 - include: RedHat-install.yml
   when: ansible_os_family == "RedHat"
 
-- include: Ubuntu-install.yml
+- include: Debian-install.yml
   when: ansible_os_family == "Debian"
 
 - include: configure.yml

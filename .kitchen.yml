@@ -11,7 +11,7 @@ provisioner:
   name: ansible_playbook
   hosts: all
   enable_yum_epel: true
-  idempotency_test: true
+  idempotency_test: false
   ansible_verbose: true
   ansible_verbosity: 2
   ansible_diff: true
@@ -28,6 +28,15 @@ platforms:
     image: centos:7
     privileged: true
     run_command: /usr/sbin/init
+- name: ubuntu-12.04
+  driver:
+    image: ubuntu:12.04
+- name: ubuntu-14.04
+  driver:
+    image: ubuntu:14.04
+- name: ubuntu-16.04
+  driver:
+    image: ubuntu:16.04
 
 suites:
 - name: default

@@ -51,8 +51,10 @@ logfile={{ newrelic_sysmond_logfile }}
 #            fred:secret@proxy.mydomain.com:8181
 # Default: none (use a direct connection)
 #
-{% if newrelic_sysmond_proxy is defined %}
+{% if newrelic_sysmond_proxy is not none %}
 proxy={{ newrelic_sysmond_proxy }}
+{% else %}
+#proxy=
 {% endif %}
 
 #
@@ -112,8 +114,10 @@ hostname={{ newrelic_sysmond_hostname }}
 #          group. Please consult the Docker web site for details and security
 #          implications.
 # Default: empty
-{% if newrelic_sysmond_docker_connection is defined %}
+{% if newrelic_sysmond_docker_connection is not none %}
 docker_connection={{ newrelic_sysmond_docker_connection }}
+{% else %}
+#docker_connection=
 {% endif %}
 
 #
@@ -127,8 +131,10 @@ docker_connection={{ newrelic_sysmond_docker_connection }}
 #          $DOCKER_CERT_PATH will be used as the default value if no value
 #          is explicitly set here.
 # Default: empty
-{% if newrelic_sysmond_docker_cert_path is defined %}
+{% if newrelic_sysmond_docker_cert_path is not none %}
 docker_cert_path={{ newrelic_sysmond_docker_cert_path }}
+{% else %}
+#docker_cert_path=
 {% endif %}
 
 #
@@ -140,16 +146,22 @@ docker_cert_path={{ newrelic_sysmond_docker_cert_path }}
 #          use for TLS. If these are not absolute paths they are searched for
 #          in the directory determined by docker_cert_path above.
 # Default: empty
-{% if newrelic_sysmond_docker_cert is defined %}
+{% if newrelic_sysmond_docker_cert is not none %}
 docker_cert={{ newrelic_sysmond_docker_cert }}
+{% else %}
+#docker_cert=
 {% endif %}
 
-{% if newrelic_sysmond_docker_key is defined %}
+{% if newrelic_sysmond_docker_key is not none %}
 docker_key={{ newrelic_sysmond_docker_key }}
+{% else %}
+#docker_key=
 {% endif %}
 
-{% if newrelic_sysmond_docker_cacert is defined %}
+{% if newrelic_sysmond_docker_cacert is not none %}
 docker_cacert={{ newrelic_sysmond_docker_cacert }}
+{% else %}
+#docker_cacert=
 {% endif %}
 
 #
@@ -165,8 +177,10 @@ docker_cacert={{ newrelic_sysmond_docker_cacert }}
 # Default: none
 # Note   : Can also be set with the -b command line option.
 #
-{% if newrelic_sysmond_ssl_ca_bundle is defined %}
+{% if newrelic_sysmond_ssl_ca_bundle is not none %}
 ssl_ca_bundle={{ newrelic_sysmond_ssl_ca_bundle }}
+{% else %}
+#ssl_ca_bundle=
 {% endif %}
 
 
@@ -182,8 +196,10 @@ ssl_ca_bundle={{ newrelic_sysmond_ssl_ca_bundle }}
 # Default: none
 # Note   : Can also be set with the -S command line option.
 #
-{% if {{ newrelic_sysmond_ssl_ca_path }} %}
+{% if newrelic_sysmond_ssl_ca_path is not none  %}
 ssl_ca_path={{ newrelic_sysmond_ssl_ca_path }}
+{% else %}
+#ssl_ca_path=
 {% endif %}
 
 #

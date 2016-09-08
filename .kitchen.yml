@@ -28,6 +28,15 @@ platforms:
     image: centos:7
     privileged: true
     run_command: /usr/sbin/init
+- name: ubuntu-12.04
+  driver:
+    image: ubuntu:12.04
+- name: ubuntu-14.04
+  driver:
+    image: ubuntu:14.04
+- name: ubuntu-16.04
+  driver:
+    image: ubuntu:16.04
 
 suites:
 - name: default

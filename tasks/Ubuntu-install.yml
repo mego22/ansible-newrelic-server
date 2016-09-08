@@ -1,0 +1,14 @@
+---
+
+- name: New Relic sysmond | Add apt key
+  apt_key: url=https://download.newrelic.com/548C16BF.gpg state=present
+
+- name: New Relic sysmond | Setup apt repo
+  apt_repo:
+    repo: 'deb http://apt.newrelic.com/debian/ newrelic non-free'
+    state: present
+    filename: 'newrelic'
+    update_cache: true
+
+- name: New Relic sysmond | Install newrelic-sysmond
+  yum: name=newrelic-sysmond state=present

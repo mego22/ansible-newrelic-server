@@ -1,5 +1,5 @@
 ---
 - name: New Relic sysmond | Configure
-  template: src=nrsysmond.cfg.j2 dest=/etc/newrelic/nrsysmond.cfg owner=root group=root mode=644
+  template: src=nrsysmond.cfg.j2 dest=/etc/newrelic/nrsysmond.cfg owner=root group=root mode=0644
   notify:
     - restart newrelic-sysmond

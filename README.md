@@ -86,6 +86,10 @@ Set the name of the CA certificate file to use for TLS to connect to the Docker 
 
     newrelic_sysmond_docker_cacert:
 
+Use https for yum repositories
+
+    newrelic_yum_https: true
+
 Example Playbook
 ----------------
 

@@ -1,7 +1,18 @@
 ---
 
 - name: New Relic sysmond | Setup yum repo
-  yum: name=https://yum.newrelic.com/pub/newrelic/el5/x86_64/newrelic-repo-5-3.noarch.rpm state=present
+  yum:
+    name=https://yum.newrelic.com/pub/newrelic/el5/x86_64/newrelic-repo-5-3.noarch.rpm
+    state=present
+
+- name: New Relic sysmond | Use https for yum repo
+  replace:
+    dest: /etc/yum.repos.d/newrelic.repo
+    regexp: 'baseurl=http:'
+    replace: 'baseurl=https:'
+  when: newrelic_yum_https
 
 - name: New Relic sysmond | Install newrelic-sysmond
-  yum: name=newrelic-sysmond state=present
+  yum:
+    name=newrelic-sysmond
+    state=present

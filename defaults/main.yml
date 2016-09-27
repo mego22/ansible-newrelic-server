@@ -57,3 +57,6 @@ newrelic_sysmond_docker_key:
 
 # Set the name of the CA certificate file to use for TLS to connect to the Docker API.
 newrelic_sysmond_docker_cacert:
+
+# User https for yum repo
+newrelic_yum_https: true

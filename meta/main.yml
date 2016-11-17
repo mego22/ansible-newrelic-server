@@ -1,6 +1,5 @@
 ---
 dependencies: []
-  
 galaxy_info:
   author: mego22
   description: New Relic Sysmond for RedHat/CentOS/Debian/Ubuntu systems
@@ -16,5 +15,5 @@ galaxy_info:
      - precise
      - trusty
      - xenial
-  galaxy_tags: 
+  galaxy_tags:
    - monitoring

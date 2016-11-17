@@ -1,5 +1,6 @@
 ---
-- fail: msg="License key is not set."
+- name: New Relic sysmond | Check for license key
+  fail: msg="License key is not set."
   when: newrelic_sysmond_license_key is none
 
 - include: RedHat-install.yml
